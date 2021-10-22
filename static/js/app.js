@@ -1,26 +1,29 @@
+27:30
 
-d3.json("Resources/samples.json").then(function(d){
+
+function init(){
+    var selector = d3.select("#selDataset");
+
+    d3.json("Resources/samples.json").then(function(d){
     
-   var samples = d.samples[0].sample_values;
-// var ids = Object.values(samples[0].otu_ids);
-// var labels = Object.values(samples[0].otu_labels); 
-    console.log(samples);
-        });
+        var sampNames = d.names;
 
-// Create an array of each country's numbers
+        sampNames.forEach(function(name) {
+            selector.append('option').text(name).property('value',name)
+
+        })
+
+        var samples = sampNames[0];
+
+        sampList = d.samples;
+        var results = sampList.filter(function(samp){
+            return samp.id === samples;
+        }
+
+        var ids = 
+    })
+ 
+}
 
 
-
-// function myFunc(data) {
-//     console.log(data);
-// }
-
-// d3.json('samples.json', function (data) {
-//     var json = data['samples'];
-//     myFunc(json);});
-
-
-
-// // Create an array of music provider labels
-// // var labels = Object.keys(data.us);
-// console.log(samples)
+init()
