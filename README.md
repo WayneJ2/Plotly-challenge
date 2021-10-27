@@ -1,2 +1,0 @@
-# Plotly-challenge
- biodiversity plots
